@@ -173,6 +173,7 @@ a:focus {
   padding: 0px 7px;
   width: 37px;
   height: 42px;
+  margin-right: 40px; /* Adjust the left margin */
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -499,10 +500,7 @@ a:focus {
   background-color: rgba(30, 139, 195, 0.5); 
 }
 
-.service_section .box:hover img {
-  -webkit-filter: invert(1);
-          filter: invert(1);
-}
+
 
 .service_section .btn-box {
   display: -webkit-box;
