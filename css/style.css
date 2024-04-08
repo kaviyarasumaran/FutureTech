@@ -111,20 +111,25 @@ a:focus {
   position: sticky;
   top: 0;
   z-index: 1020;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 .navbar {
   background-color: #fff;
   width: 100%;
-  position: sticky;
   max-width: 100%;
-  min-height: 10px;
+  height: 200px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
+
 
 .header_section .container-fluid {
   padding-right: 25px;
   padding-left: 25px;
+}
+
+.navbar-brand img{
+  width: clamp(200px, 25vw, 500px) !important;
 }
 
 .navbar-brand span {
@@ -135,13 +140,19 @@ a:focus {
 
 .custom_nav-container {
   padding: 0;
+  margin: 0;
 }
 
+
+
 .custom_nav-container .navbar-nav {
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: space-between; /* Distribute items evenly */
   align-items: center;
   margin: auto;
+  background-color: white;
 }
 
 .custom_nav-container .navbar-nav .nav-item{
@@ -529,6 +540,7 @@ a:focus {
           transform: translateY(-3px);
 }
 
+
 .about_section {
   margin: 2rem;
   background-color: #eeeeee;
@@ -542,12 +554,19 @@ a:focus {
           align-items: center;
 }
 
+.about_section .row .col-md-6 {
+  display: flex;
+  align-items: center;
+}
+
 .about_section .img-box {
   position: relative;
 }
 
 .about_section .img-box img {
-  width: 100%;
+  max-width: 100%;
+  max-height: 300px; /* Adjusted height for larger screens */
+  height: auto;
 }
 
 .about_section .detail-box p {
@@ -566,11 +585,61 @@ a:focus {
   margin-top: 15px;
 }
 
-.about_section .detail-box a:hover {
-  color: #ffffff;
-  -webkit-transform: translateY(-3px);
-          transform: translateY(-3px);
+/* Adjusting text size and margins for smaller screens */
+@media (max-width: 992px) {
+
+  .about_section .row .col-md-6 {
+    margin-bottom: 30px; /* Add some spacing between image and text */
+  }
+
+  .about_section .detail-box {
+    padding: 0 15px;
+  }
+  .about_section .detail-box h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  .about_section .detail-box p {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
 }
+
+/* Further adjustments for even smaller screens */
+@media (max-width: 768px) {
+
+  .about_section .row .col-md-6 {
+    margin-bottom: 15px; /* Reduce spacing for smaller screens */
+  }
+
+  .about_section .detail-box h2 {
+    font-size: 20px;
+  }
+  .about_section .detail-box p {
+    font-size: 14px;
+  }
+}
+
+/* Adjusting margins and paddings for very small screens */
+@media (max-width: 576px) {
+  .about_section {
+    margin: 1rem 0;
+    border-radius: 0;
+  }
+  .about_section .detail-box {
+    padding: 0 10px;
+  }
+  .about_section .detail-box h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .about_section .detail-box p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+}
+
+
 
 .case_section .heading_container {
   display: flex;
@@ -586,7 +655,15 @@ a:focus {
 .case_section .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.case_section .col-md-4 {
+  flex: 0 0 auto; 
+  width: 90%; 
+  max-width: 350px; 
+  margin-bottom: 30px; 
 }
 
 .case_section .box {
@@ -594,10 +671,10 @@ a:focus {
   background-color: #ffffff;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
   text-align: center;
-  width: 90%; /* Default width */
-  max-width: 300px; /* Maximum width for better responsiveness */
-  height: auto; /* Adjusted height to allow content to expand */
-  flex: 1 1 auto; /* Adjusted flex properties for responsiveness */
+  width: 90%; 
+  max-width: 300px; 
+  height: auto; 
+  flex: 1 1 auto; 
   margin-bottom: 30px;
 }
 
@@ -611,7 +688,7 @@ a:focus {
   border: 3px solid rgba(30, 139, 195, 1);
   border-radius: 50%;
   max-width: 100%;
-  width: 100%; /* Adjusted width for responsiveness */
+  width: 100%; 
   height: auto;
 }
 
@@ -634,36 +711,36 @@ a:focus {
 
 @media (max-width: 992px) {
   .case_section .box {
-    flex-basis: 45%; /* Adjusted width for medium screens */
+    flex-basis: 45%; 
   }
 }
 
 @media (max-width: 820px) {
   .case_section .box {
-    flex-basis: 45%; /* Adjusted width for screens up to 820px */
-    margin: 15px; /* Added margin between boxes for better spacing */
+    flex-basis: 45%;
+    margin: 15px;
   }
 }
 
 @media (max-width: 768px) {
   .case_section .row {
-    justify-content: center; /* Center the boxes horizontally */
-    flex-direction: column; /* Stack the boxes vertically */
-    align-items: center; /* Center the boxes vertically */
+    justify-content: center; 
+    flex-direction: column; 
+    align-items: center; 
   }
   
   .case_section .box {
-    width: 100%; /* Increase the width of the boxes */
-    max-width: 300px; /* Limit the maximum width for responsiveness */
-    margin: 15px 0; /* Adjusted margin to ensure prope */
+    width: 100%; 
+    max-width: 300px; 
+    margin: 15px 0; 
   }
 }
   
 @media (max-width: 576px) {
   .case_section .box {
-    width: 95%; /* Adjusted width for screens up to 576px */
-    max-width: none; /* Remove the maximum width limit */
-    margin: 15px auto; /* Center the boxes horizontally with top and bottom margin */
+    width: 95%; 
+    max-width: none; 
+    margin: 15px auto; 
   }
 }
 
@@ -758,8 +835,8 @@ a:focus {
 
 .contact_section input,
 .contact_section textarea {
-  width: calc(100% - 30px); /* Adjusted width for better responsiveness */
-  max-width: 100%; /* Ensures inputs don't overflow parent container */
+  width: calc(100% - 30px); 
+  max-width: 100%; 
   border: 1px solid #a5a5a5;
   height: 50px;
   margin-bottom: 25px;
@@ -779,7 +856,7 @@ a:focus {
 }
 
 .contact_section button {
-  padding: 10px 20px; /* Adjusted padding for better responsiveness */
+  padding: 10px 20px; 
   background-color: #FC8602;
   color: #fff;
   border-radius: 3px;
@@ -800,11 +877,11 @@ a:focus {
 }
 
 .contact_section .map_container img {
-  max-width: 100%; /* Ensures the image doesn't exceed its container width */
-  display: block; /* Ensures margin-left: auto and margin-right: auto work as expected */
-  margin: 0 auto; /* Centers the image horizontally */
-  width: 500px; /* Set the desired width of the image */
-  height: auto; /* Maintains the aspect ratio */
+  max-width: 100%; 
+  display: block; 
+  margin: 0 auto; 
+  width: 500px; 
+  height: auto; 
 }
 
 
