@@ -549,14 +549,8 @@ a:focus {
 }
 
 .about_section .row {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.about_section .row .col-md-6 {
-  display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .about_section .img-box {
@@ -567,10 +561,12 @@ a:focus {
   max-width: 100%;
   max-height: 300px; /* Adjusted height for larger screens */
   height: auto;
+  padding-left: 25px;
 }
 
 .about_section .detail-box p {
   margin-top: 15px;
+  font-size: 20px;
 }
 
 .about_section .detail-box a {
@@ -579,12 +575,10 @@ a:focus {
   background-color: rgba(30, 139, 195, 0.5); 
   color: #ffffff;
   border-radius: 5px;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: 1px solid #f8842b;
   margin-top: 15px;
 }
-
 /* Adjusting text size and margins for smaller screens */
 @media (max-width: 992px) {
 
@@ -596,7 +590,7 @@ a:focus {
     padding: 0 15px;
   }
   .about_section .detail-box h2 {
-    font-size: 24px;
+    font-size: 25px;
     margin-bottom: 15px;
   }
   .about_section .detail-box p {
@@ -607,32 +601,44 @@ a:focus {
 
 /* Further adjustments for even smaller screens */
 @media (max-width: 768px) {
+  .about_section .img-box {
+    width: 70%; 
+    padding-left: 10vw;
+  }
 
-  .about_section .row .col-md-6 {
-    margin-bottom: 15px; /* Reduce spacing for smaller screens */
+  .about_section .img-box img {
+    max-width: 250vw; 
+    max-height: 250px; 
   }
 
   .about_section .detail-box h2 {
     font-size: 20px;
   }
+
   .about_section .detail-box p {
     font-size: 14px;
   }
 }
 
-/* Adjusting margins and paddings for very small screens */
 @media (max-width: 576px) {
-  .about_section {
-    margin: 1rem 0;
-    border-radius: 0;
+  .about_section .img-box {
+    width: 50%; 
+    padding-right: 20px;
+    text-align: center;
   }
-  .about_section .detail-box {
-    padding: 0 10px;
+
+  .about_section .img-box img {
+    max-width: 250vw; 
+    max-height: 200px;
+    text-align: center;
+    padding: 0;
   }
+
   .about_section .detail-box h2 {
     font-size: 18px;
     margin-bottom: 10px;
   }
+
   .about_section .detail-box p {
     font-size: 12px;
     margin-bottom: 10px;
